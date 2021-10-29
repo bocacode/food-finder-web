@@ -9,7 +9,7 @@ export default function RandomRestaurant() {
     const _randomIndex = Math.floor(Math.random() * restaurants.length);
     setRandomIndex(_randomIndex);
   }
-  useEffect(getRandom, []);
+  useEffect(getRandom, [restaurants]);
   return (
     <>
       <RestaurantCard rest={restaurants[randomIndex]} />

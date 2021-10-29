@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
 import Home from './components/Home';
@@ -11,6 +11,12 @@ export const RestaurantContext = createContext();
 
 function App() {
   const [restaurants, setRestaurants] = useState();
+  useEffect(() => {
+    fetch('https://bocacode-intranet-api.web.app/restaurants')
+      .then(response => response.json())
+      .then(setRestaurants)
+      .catch(alert)
+  }, []);
   return (
     <Router>
       <RestaurantContext.Provider value={{ restaurants, setRestaurants }}>
