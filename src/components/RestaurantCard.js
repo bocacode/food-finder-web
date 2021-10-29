@@ -11,7 +11,7 @@ export default function RestaurantCard({ rest }) {
       style={styles.card}
       onClick={() => history.push('/details/' + rest.id)}
       hoverable
-      cover={<img alt={rest.name} src={rest.photoUrl} />}>
+      cover={<img style={styles.cardImage} alt={rest.name} src={rest.photoUrl} />}>
       <Meta title={rest.name} description={rest.address} />
     </Card>
   )

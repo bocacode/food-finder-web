@@ -1,6 +1,8 @@
 const styles = {
   container: {
     flex: 1,
+    display: 'flex',
+    flexWrap: 'wrap',
     backgroundColor: '#cde',
     alignItems: 'center',
     justifyContent: 'center',
@@ -9,17 +11,20 @@ const styles = {
   card: {
     margin: 8,
     alignSelf: 'center',
-    borderRadius: 8,
+    borderRadius: '8px',
     borderColor: '#807060',
     borderWidth: 1,
     width: 320,
     backgroundColor: '#fff',
+    padding: 1,
   },
   cardImage: {
-    width: 318,
+    width: 319,
+    // marginLeft: 1,
+    // marginRight: 10,
     height: 200,
-    borderTopRightRadius: 8,
-    borderTopLeftRadius: 8,
+    borderTopRightRadius: '7px',
+    borderTopLeftRadius: '7px',
   },
   cardTitle: {
     fontSize: 28,
@@ -31,8 +36,9 @@ const styles = {
     padding: 4,
   },
   detailsImage: {
-    width: '100%',
-    height: 240,
+    width: 'auto',
+    maxWidth: '100%',
+    height: 420,
   }
 }
 
