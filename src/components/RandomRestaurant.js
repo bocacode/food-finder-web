@@ -6,10 +6,15 @@ export default function RandomRestaurant() {
   const { restaurants } = useContext(RestaurantContext);
   const [randomIndex, setRandomIndex] = useState(0);
   const getRandom = () => {
-    const _randomIndex = Math.floor(Math.random() * restaurants.length);
-    setRandomIndex(_randomIndex);
+    if(restaurants){
+      const _randomIndex = Math.floor(Math.random() * restaurants.length);
+      setRandomIndex(_randomIndex);
+    }
   }
   useEffect(getRandom, [restaurants]);
+  if(!restaurants) {
+    return <h2>Loading...</h2>
+  }
   return (
     <>
       <RestaurantCard rest={restaurants[randomIndex]} />
